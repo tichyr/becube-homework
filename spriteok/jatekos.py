@@ -12,6 +12,7 @@ class Jatekos(Figura):
         super().__init__(x, y)
         self.eletek = eletek
         self.legutobbi_lepes = Irany.SEMERRE
+        self.lepett = False
         self.arany = 0
         self.tavolsag = 0
         self.targylista = []
@@ -21,6 +22,7 @@ class Jatekos(Figura):
         self.center_x -= MEZO_MERET
         if not self.falon_all(fal_lista):
             self.legutobbi_lepes = Irany.BALRA
+            self.lepett = False
         else:
             self.center_x = eredeti_koordinata
 
@@ -29,6 +31,7 @@ class Jatekos(Figura):
         self.center_x += MEZO_MERET
         if not self.falon_all(fal_lista):
             self.legutobbi_lepes = Irany.JOBBRA
+            self.lepett = False
         else:
             self.center_x = eredeti_koordinata
 
@@ -37,6 +40,7 @@ class Jatekos(Figura):
         self.center_y -= MEZO_MERET
         if not self.falon_all(fal_lista):
             self.legutobbi_lepes = Irany.LE
+            self.lepett = False
         else:
             self.center_y = eredeti_koordinata
 
@@ -45,6 +49,7 @@ class Jatekos(Figura):
         self.center_y += MEZO_MERET
         if not self.falon_all(fal_lista):
             self.legutobbi_lepes = Irany.FEL
+            self.lepett = False
         else:
             self.center_y = eredeti_koordinata
 

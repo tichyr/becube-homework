@@ -20,10 +20,12 @@ class Lada(Figura):
             print("A láda zárva van")
 
     def kifoszt(self, jatekos):
-        if self.nyitva:
-            self.kill()
-            self.tartalom_kiiras()
-            for targy in self.tartalom:
-                jatekos.targyat_talal(targy)
-        else:
-            self.tartalom_kiiras()
+        if jatekos.lepett == False:
+            if self.nyitva:
+                self.kill()
+                self.tartalom_kiiras()
+                for targy in self.tartalom:
+                    jatekos.targyat_talal(targy)
+            else:
+                self.tartalom_kiiras()
+            jatekos.lepett = True
